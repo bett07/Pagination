@@ -77,7 +77,7 @@ displayContacts(listItem,0);
 const addPageNumbers = (items) => {
     const totalPages = Math.ceil(items.length/maxPerPage);
     console.log(totalPages);
-    const pageList = document.querySelector('div.pageNum');
+    const pageList = document.querySelector('div.pagination');
 
     for(let i=1; i<totalPages; i++){
         var addbutton = document.createElement('li');
