@@ -85,6 +85,7 @@ const addPageNumbers = (items) => {
         pageList.appendChild(addbutton);
     }
      var itembuttons = document.querySelectorAll('.active');
+
       for(let i=0; i< itembuttons.length; i++){
           itembuttons[i].classList.remove('active');
       }
@@ -93,10 +94,10 @@ const addPageNumbers = (items) => {
           for(let j =0; j< itembuttons.length; j++){
               itembuttons[j].classList.remove('active');
           }
-          itembuttons[i].addEventListener('click', ()=>{
+          itembuttons[i].addEventListener('click', () => {
               displayContacts(listItem,i);
               itembuttons[i].classList.add('ative');
-              itembuttons[i].classList.remove('remove');
+              itembuttons[i].classList.remove('active');
           })
       }
 }
