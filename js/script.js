@@ -74,3 +74,31 @@ const displayContacts = (items, page) => {
 
 displayContacts(listItem,0);
 
+const addPageNumbers = (items) => {
+    const totalPages = Math.ceil(items.length/maxPerPage);
+    console.log(totalPages);
+    const pageList = document.querySelector('div.pageNum');
+
+    for(let i=1; i<totalPages; i++){
+        var addbutton = document.createElement('li');
+        addbutton.innerHTML = '<a class ="active" >' + i +'</a>';
+        pageList.appendChild(addbutton);
+    }
+     var itembuttons = document.querySelectorAll('.active');
+      for(let i=0; i< itembuttons.length; i++){
+          itembuttons[i].classList.remove('active');
+      }
+
+      for(let i =0; i< itembuttons.length; i++){
+          for(let j =0; j< itembuttons.length; j++){
+              itembuttons[j].classList.remove('active');
+          }
+          itembuttons[i].addEventListener('click', ()=>{
+              displayContacts(listItem,i);
+              itembuttons[i].classList.add('ative');
+              itembuttons[i].classList.remove('remove');
+          })
+      }
+}
+
+addPageNumbers(listItem);
